@@ -106,6 +106,39 @@ export default function OnboardingScreen() {
     router.replace('/verification-pending');
   };
 
+  // Demo skip function - fills demo data and completes onboarding
+  const handleSkipDemo = () => {
+    Alert.alert(
+      'Skip for Demo',
+      'This will fill in demo data and complete onboarding. Continue?',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Continue',
+          onPress: () => {
+            // Fill demo data
+            updatePartnerDetails({
+              fullName: 'Raj Kumar',
+              mobile: '9876543210',
+              profilePhoto: 'https://ui-avatars.com/api/?name=Raj+Kumar&background=FF5722&color=fff',
+              vehicleType: 'bike',
+              vehicleNumber: 'KA01AB1234',
+              drivingLicense: 'https://via.placeholder.com/400x300?text=Demo+License',
+              identityProof: 'https://via.placeholder.com/400x300?text=Demo+ID',
+              bankDetails: {
+                accountNumber: '1234567890',
+                ifscCode: 'HDFC0001234',
+                accountHolderName: 'Raj Kumar',
+              },
+            });
+            completeOnboarding();
+            router.replace('/verification-pending');
+          },
+        },
+      ]
+    );
+  };
+
   const renderStepIndicator = () => (
     <View style={styles.stepIndicator}>
       {[1, 2, 3, 4, 5, 6].map((s) => (
