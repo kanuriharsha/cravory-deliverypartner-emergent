@@ -7,6 +7,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   Alert,
+  TouchableOpacity,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
@@ -14,7 +15,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { Button, Input, DocumentUpload, Card } from '../src/components';
 import { useAppStore } from '../src/store/appStore';
 import { COLORS, FONTS, SPACING, BORDER_RADIUS } from '../src/constants/theme';
-import { TouchableOpacity } from 'react-native';
 
 type OnboardingStep = 1 | 2 | 3 | 4 | 5 | 6;
 type VehicleType = 'bike' | 'bicycle' | 'scooter';
