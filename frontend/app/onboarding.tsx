@@ -354,10 +354,16 @@ export default function OnboardingScreen() {
           </View>
 
           {/* Skip for Demo button */}
-          <TouchableOpacity style={styles.skipDemoButton} onPress={handleSkipDemo}>
+          <Pressable 
+            style={({ pressed }) => [
+              styles.skipDemoButton,
+              pressed && { opacity: 0.7 }
+            ]} 
+            onPress={handleSkipDemo}
+          >
             <Ionicons name="flash" size={18} color={COLORS.secondary} />
             <Text style={styles.skipDemoText}>Skip for Demo</Text>
-          </TouchableOpacity>
+          </Pressable>
         </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
