@@ -495,4 +495,17 @@ const styles = StyleSheet.create({
   nextButtonFull: {
     flex: 1,
   },
+  skipDemoButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: SPACING.lg,
+    padding: SPACING.md,
+  },
+  skipDemoText: {
+    fontSize: FONTS.sizes.md,
+    color: COLORS.secondary,
+    marginLeft: SPACING.xs,
+    fontWeight: '500',
+  },
 });
